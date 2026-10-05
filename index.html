@@ -3,286 +3,785 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Grants — Community & Resources</title>
   <meta name="description" content="Grants — uma comunidade moderna para recursos, projetos e criadores.">
+
   <style>
-    :root{
-      --bg:#08070d;
-      --panel:#0e0c15;
-      --panel2:#12101a;
-      --text:#f5f2fa;
-      --muted:#9993a8;
-      --line:rgba(255,255,255,.08);
-      --accent:#ff1493;
-      --accent2:#ff69b4;
+    :root {
+      --bg: #08070d;
+      --panel: #0e0c15;
+      --text: #f5f2fa;
+      --muted: #9993a8;
+      --line: rgba(255,255,255,.08);
+      --accent: #ff1493;
+      --accent2: #ff69b4;
     }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      <div style="
-  position:fixed;
-  bottom:25px;
-  left:50%;
-  transform:translateX(-50%);
-  z-index:9999;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:10px 16px;
-  background:rgba(0,0,0,.85);
-  border:1px solid #ff1493;
-  border-radius:14px;
-  box-shadow:0 0 20px rgba(255,20,147,.45);
-  backdrop-filter:blur(10px);
-">
-  <span style="
-    color:#ff69b4;
-    font-weight:bold;
-    font-family:Arial,sans-serif;
-  ">♫ Grants Music</span>
 
-  <audio controls style="height:32px;">
-    <source src="music.mp3" type="audio/mpeg">
-    Seu navegador não suporta áudio.
-  </audio>
-</div>
-      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at 50% -10%,rgba(255,20,147,.20),transparent 35%),
+        radial-gradient(
+          circle at 50% -10%,
+          rgba(255,20,147,.20),
+          transparent 35%
+        ),
         var(--bg);
-      color:var(--text);
-      line-height:1.6;
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
-    a{text-decoration:none;color:inherit}
-    .container{width:min(1120px,calc(100% - 40px));margin:auto}
-    nav{
-      position:sticky;top:0;z-index:20;
-      backdrop-filter:blur(18px);
-      background:rgba(8,7,13,.72);
-      border-bottom:1px solid var(--line);
-    }
-    .nav-inner{
-      height:72px;display:flex;align-items:center;justify-content:space-between;gap:25px;
-    }
-    .brand{font-weight:800;font-size:22px;letter-spacing:-.04em}
-    .brand span{color:var(--accent2)}
-    .links{display:flex;gap:24px;color:var(--muted);font-size:14px}
-    .links a:hover{color:white}
-    .login{
-      padding:9px 15px;border:1px solid var(--line);border-radius:10px;
-      font-size:14px;background:rgba(255,255,255,.03)
-    }
-    .hero{padding:105px 0 80px;text-align:center}
-    .pill{
-      display:inline-flex;padding:7px 12px;border:1px solid rgba(255,20,147,.30);
-      border-radius:999px;background:rgba(255,20,147,.10);color:#ff69b4;font-size:12px;
-      margin-bottom:22px;
-    }
-    h1{
-      font-size:clamp(46px,8vw,82px);line-height:.98;letter-spacing:-.065em;
-      max-width:850px;margin:auto;
-    }
-    h1 em{font-style:normal;color:var(--accent2)}
-    .hero p{max-width:650px;margin:25px auto 30px;color:var(--muted);font-size:17px}
-    .buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-    .btn{
-      padding:12px 18px;border-radius:11px;font-size:14px;font-weight:650;
-      border:1px solid var(--line);transition:.2s;
-    }
-    .btn.primary{background:#ff1493;color:white;border-color:#ff1493;box-shadow:0 8px 35px rgba(255,20,147,.20)}
-    .btn.secondary{background:rgba(255,255,255,.035)}
-    .btn:hover{transform:translateY(-2px)}
-    .stats{
-      display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin:25px 0 90px;
-      border:1px solid var(--line);border-radius:15px;overflow:hidden;background:var(--line)
-    }
-    .stat{background:rgba(255,255,255,.025);padding:25px;text-align:center}
-    .stat strong{display:block;font-size:25px}
-    .stat span{color:var(--muted);font-size:12px}
-    section{padding:80px 0}
-    .eyebrow{color:#ff69b4;font-size:12px;text-transform:uppercase;letter-spacing:.16em;font-weight:700}
-    .section-title{font-size:36px;letter-spacing:-.045em;margin:9px 0 10px}
-    .section-copy{color:var(--muted);max-width:620px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:32px}
-    .card{
-      background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.018));
-      border:1px solid var(--line);border-radius:16px;padding:25px;
-      min-height:190px;transition:.2s;
-    }
-    .card:hover{border-color:rgba(255,20,147,.35);transform:translateY(-3px)}
-    .icon{
-      width:40px;height:40px;border-radius:11px;display:grid;place-items:center;
-      background:rgba(255,20,147,.14);color:#ff69b4;margin-bottom:18px
-    }
-    .card h3{font-size:17px;margin-bottom:7px}
-    .card p{font-size:13px;color:var(--muted)}
-    .about{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
-    .about-box{
-      border:1px solid var(--line);border-radius:18px;padding:32px;
-      background:radial-gradient(circle at top right,rgba(255,20,147,.14),transparent 45%),var(--panel)
-    }
-    .about-box h3{font-size:23px;margin-bottom:12px}
-    .about-box p{color:var(--muted);font-size:14px}
-    .cta{
-      text-align:center;border:1px solid var(--line);border-radius:20px;padding:65px 25px;
-      background:radial-gradient(circle at 50% 0,rgba(255,20,147,.18),transparent 55%),var(--panel)
-    }
-    .cta h2{font-size:38px;letter-spacing:-.05em}
-    .cta p{color:var(--muted);margin:10px auto 24px;max-width:550px}
-    footer{border-top:1px solid var(--line);padding:35px 0;color:var(--muted);font-size:12px}
-    .footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-    @media(max-width:800px){
-      .links{display:none}
-      .stats{grid-template-columns:repeat(2,1fr)}
-      .grid,.about{grid-template-columns:1fr}
-      .hero{padding-top:75px}
-    }
-  
-    /* Falling white sparkles */
-    #sparkles{
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      overflow:hidden;
-      z-index:0;
-    }
-    .sparkle{
-      position:absolute;
-      top:-20px;
-      width:3px;
-      height:3px;
-      border-radius:50%;
-      background:#fff;
-      box-shadow:0 0 6px 2px rgba(255,255,255,.75);
-      opacity:.8;
-      animation:fall linear infinite;
-    }
-    .sparkle::after{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      border-radius:50%;
-      background:rgba(255,255,255,.5);
-      filter:blur(2px);
-    }
-    @keyframes fall{
-      0%{transform:translate3d(0,-30px,0) rotate(0deg);opacity:0}
-      10%{opacity:.9}
-      50%{transform:translate3d(25px,50vh,0) rotate(180deg)}
-      100%{transform:translate3d(-20px,110vh,0) rotate(360deg);opacity:0}
-    }
-    main, footer, nav{position:relative;z-index:1}
 
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(8,7,13,.72);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: -.04em;
+    }
+
+    .brand span {
+      color: var(--accent2);
+    }
+
+    .links {
+      display: flex;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .links a:hover {
+      color: white;
+    }
+
+    .login {
+      padding: 9px 15px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      font-size: 14px;
+      background: rgba(255,255,255,.03);
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 105px 0 80px;
+      text-align: center;
+    }
+
+    .pill {
+      display: inline-flex;
+      padding: 7px 12px;
+      border: 1px solid rgba(255,20,147,.30);
+      border-radius: 999px;
+      background: rgba(255,20,147,.10);
+      color: #ff69b4;
+      font-size: 12px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(46px, 8vw, 82px);
+      line-height: .98;
+      letter-spacing: -.065em;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    h1 em {
+      font-style: normal;
+      color: var(--accent2);
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 25px auto 30px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 18px;
+      border-radius: 11px;
+      font-size: 14px;
+      font-weight: 650;
+      border: 1px solid var(--line);
+      transition: .2s;
+    }
+
+    .btn.primary {
+      background: #ff1493;
+      color: white;
+      border-color: #ff1493;
+      box-shadow: 0 8px 35px rgba(255,20,147,.20);
+    }
+
+    .btn.secondary {
+      background: rgba(255,255,255,.035);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* STATS */
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 1px;
+      margin: 25px 0 90px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      overflow: hidden;
+      background: var(--line);
+    }
+
+    .stat {
+      background: rgba(255,255,255,.025);
+      padding: 25px;
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 25px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 80px 0;
+    }
+
+    .eyebrow {
+      color: #ff69b4;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-weight: 700;
+    }
+
+    .section-title {
+      font-size: 36px;
+      letter-spacing: -.045em;
+      margin: 9px 0 10px;
+    }
+
+    .section-copy {
+      color: var(--muted);
+      max-width: 620px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 15px;
+      margin-top: 32px;
+    }
+
+    .card {
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.045),
+          rgba(255,255,255,.018)
+        );
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 25px;
+      min-height: 190px;
+      transition: .2s;
+    }
+
+    .card:hover {
+      border-color: rgba(255,20,147,.35);
+      transform: translateY(-3px);
+    }
+
+    .icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,20,147,.14);
+      color: #ff69b4;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      font-size: 17px;
+      margin-bottom: 7px;
+    }
+
+    .card p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* ABOUT */
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about-box {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 32px;
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(255,20,147,.14),
+          transparent 45%
+        ),
+        var(--panel);
+    }
+
+    .about-box h3 {
+      font-size: 23px;
+      margin-bottom: 12px;
+    }
+
+    .about-box p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* CTA */
+
+    .cta {
+      text-align: center;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 65px 25px;
+      background:
+        radial-gradient(
+          circle at 50% 0,
+          rgba(255,20,147,.18),
+          transparent 55%
+        ),
+        var(--panel);
+    }
+
+    .cta h2 {
+      font-size: 38px;
+      letter-spacing: -.05em;
+    }
+
+    .cta p {
+      color: var(--muted);
+      margin: 10px auto 24px;
+      max-width: 550px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 35px 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* MUSIC PLAYER */
+
+    .music-player {
+      position: fixed;
+      left: 50%;
+      bottom: 20px;
+      transform: translateX(-50%);
+      z-index: 100;
+      width: min(420px, calc(100% - 30px));
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      background: rgba(8,7,13,.94);
+      border: 1px solid rgba(255,20,147,.55);
+      border-radius: 14px;
+      box-shadow: 0 0 25px rgba(255,20,147,.25);
+      backdrop-filter: blur(15px);
+    }
+
+    .music-name {
+      color: #ff69b4;
+      font-weight: 700;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .music-player audio {
+      width: 100%;
+      height: 34px;
+    }
+
+    /* SPARKLES */
+
+    #sparkles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .sparkle {
+      position: absolute;
+      top: -20px;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: white;
+      box-shadow: 0 0 6px 2px rgba(255,255,255,.75);
+      opacity: .8;
+      animation: fall linear infinite;
+    }
+
+    .sparkle::after {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.5);
+      filter: blur(2px);
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translate3d(0,-30px,0);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: .9;
+      }
+
+      50% {
+        transform: translate3d(25px,50vh,0);
+      }
+
+      100% {
+        transform: translate3d(-20px,110vh,0);
+        opacity: 0;
+      }
+    }
+
+    main,
+    footer,
+    nav {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .links {
+        display: none;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .grid,
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 75px;
+      }
+
+      .music-player {
+        bottom: 12px;
+      }
+
+      .music-name {
+        display: none;
+      }
+    }
   </style>
 </head>
+
 <body>
+
   <nav>
     <div class="container nav-inner">
-      <a class="brand" href="#">Grants<span>.</span></a>
+
+      <a class="brand" href="#">
+        Grants<span>.</span>
+      </a>
+
       <div class="links">
         <a href="#resources">Resources</a>
         <a href="#community">Community</a>
         <a href="#about">About</a>
       </div>
-      <a class="login" href="https://discord.gg/jTxHuwSxR" target="_blank" rel="noopener">Join</a>
+
+      <a
+        class="login"
+        href="https://discord.gg/jTxHuwSxR"
+        target="_blank"
+        rel="noopener"
+      >
+        Join
+      </a>
+
     </div>
   </nav>
 
   <main>
+
     <section class="hero">
+
       <div class="container">
-        <div class="pill">✦ Welcome to Grants</div>
-        <h1>Your space for <em>resources</em>, ideas & community.</h1>
-        <p>Um hub moderno para descobrir recursos, acompanhar projetos e fazer parte de uma comunidade criativa.</p>
-        <div class="buttons">
-          <a class="btn primary" href="#resources">Explore resources →</a>
-          <a class="btn secondary" href="#community">Join community</a>
+
+        <div class="pill">
+          ✦ Welcome to Grants
         </div>
+
+        <h1>
+          Your space for
+          <em>resources</em>,
+          ideas & community.
+        </h1>
+
+        <p>
+          Um hub moderno para descobrir recursos,
+          acompanhar projetos e fazer parte de uma
+          comunidade criativa.
+        </p>
+
+        <div class="buttons">
+
+          <a class="btn primary" href="#resources">
+            Explore resources →
+          </a>
+
+          <a class="btn secondary" href="#community">
+            Join community
+          </a>
+
+        </div>
+
       </div>
+
     </section>
 
     <div class="container">
+
       <div class="stats">
-        <div class="stat"><strong>1K+</strong><span>Members</span></div>
-        <div class="stat"><strong>24/7</strong><span>Community</span></div>
-        <div class="stat"><strong>100+</strong><span>Resources</span></div>
-        <div class="stat"><strong>∞</strong><span>Possibilities</span></div>
+
+        <div class="stat">
+          <strong>1K+</strong>
+          <span>Members</span>
+        </div>
+
+        <div class="stat">
+          <strong>24/7</strong>
+          <span>Community</span>
+        </div>
+
+        <div class="stat">
+          <strong>100+</strong>
+          <span>Resources</span>
+        </div>
+
+        <div class="stat">
+          <strong>∞</strong>
+          <span>Possibilities</span>
+        </div>
+
       </div>
+
     </div>
 
     <section id="resources">
+
       <div class="container">
-        <div class="eyebrow">Explore</div>
-        <h2 class="section-title">Everything in one place.</h2>
-        <p class="section-copy">Organize seus projetos, encontre materiais úteis e descubra novas possibilidades.</p>
-        <div class="grid">
-          <article class="card">
-            <div class="icon">✦</div>
-            <h3>Resources</h3>
-            <p>Uma biblioteca organizada para encontrar materiais e recursos rapidamente.</p>
-          </article>
-          <article class="card">
-            <div class="icon">↗</div>
-            <h3>Projects</h3>
-            <p>Apresente seus projetos e acompanhe novidades da comunidade.</p>
-          </article>
-          <article class="card">
-            <div class="icon">◎</div>
-            <h3>Community</h3>
-            <p>Conecte-se com pessoas, compartilhe ideias e participe das discussões.</p>
-          </article>
+
+        <div class="eyebrow">
+          Explore
         </div>
+
+        <h2 class="section-title">
+          Everything in one place.
+        </h2>
+
+        <p class="section-copy">
+          Organize seus projetos, encontre materiais úteis
+          e descubra novas possibilidades.
+        </p>
+
+        <div class="grid">
+
+          <article class="card">
+
+            <div class="icon">✦</div>
+
+            <h3>
+              Resources
+            </h3>
+
+            <p>
+              Uma biblioteca organizada para encontrar
+              materiais e recursos rapidamente.
+            </p>
+
+          </article>
+
+          <article class="card">
+
+            <div class="icon">↗</div>
+
+            <h3>
+              Projects
+            </h3>
+
+            <p>
+              Apresente seus projetos e acompanhe
+              novidades da comunidade.
+            </p>
+
+          </article>
+
+          <article class="card">
+
+            <div class="icon">◎</div>
+
+            <h3>
+              Community
+            </h3>
+
+            <p>
+              Conecte-se com pessoas, compartilhe ideias
+              e participe das discussões.
+            </p>
+
+          </article>
+
+        </div>
+
       </div>
+
     </section>
 
     <section id="about">
+
       <div class="container about">
+
         <div>
-          <div class="eyebrow">About Grants</div>
-          <h2 class="section-title">Built for people who create.</h2>
-          <p class="section-copy">Grants foi pensado para ser simples, rápido e visualmente limpo, mantendo tudo que você precisa em um único lugar.</p>
+
+          <div class="eyebrow">
+            About Grants
+          </div>
+
+          <h2 class="section-title">
+            Built for people who create.
+          </h2>
+
+          <p class="section-copy">
+            Grants foi pensado para ser simples, rápido
+            e visualmente limpo, mantendo tudo que você
+            precisa em um único lugar.
+          </p>
+
         </div>
+
         <div class="about-box">
-          <h3>Simple. Clean. Yours.</h3>
-          <p>Uma experiência focada em conteúdo, comunidade e descoberta. Personalize os textos, links, números e seções para deixar o site com a cara da Grants.</p>
+
+          <h3>
+            Simple. Clean. Yours.
+          </h3>
+
+          <p>
+            Uma experiência focada em conteúdo, comunidade
+            e descoberta. Personalize os textos, links,
+            números e seções para deixar o site com a cara
+            da Grants.
+          </p>
+
         </div>
+
       </div>
+
     </section>
 
     <section id="community">
+
       <div class="container">
+
         <div class="cta">
-          <div class="eyebrow">Community</div>
-          <h2>Want to be part of Grants?</h2>
-          <p>Entre para a comunidade e acompanhe projetos, novidades e recursos.</p>
-          <a class="btn primary" href="https://discord.gg/jTxHuwSxR" target="_blank" rel="noopener">Join Grants →</a>
+
+          <div class="eyebrow">
+            Community
+          </div>
+
+          <h2>
+            Want to be part of Grants?
+          </h2>
+
+          <p>
+            Entre para a comunidade e acompanhe projetos,
+            novidades e recursos.
+          </p>
+
+          <a
+            class="btn primary"
+            href="https://discord.gg/jTxHuwSxR"
+            target="_blank"
+            rel="noopener"
+          >
+            Join Grants →
+          </a>
+
         </div>
+
       </div>
+
     </section>
+
   </main>
 
   <footer>
+
     <div class="container footer">
-      <span>© 2026 Grants. All rights reserved.</span>
-      <span>Made with ♥ for creators.</span>
+
+      <span>
+        © 2026 Grants. All rights reserved.
+      </span>
+
+      <span>
+        Made with ♥ for creators.
+      </span>
+
     </div>
+
   </footer>
 
+  <!-- MUSIC -->
+
+  <div class="music-player">
+
+    <span class="music-name">
+      ♫ Grants Music
+    </span>
+
+    <audio controls preload="metadata">
+
+      <source
+        src="music.mp3"
+        type="audio/mpeg"
+      >
+
+      Seu navegador não suporta áudio.
+
+    </audio>
+
+  </div>
+
+  <!-- SPARKLES -->
+
   <div id="sparkles" aria-hidden="true"></div>
+
   <script>
-    const sparkleBox = document.getElementById("sparkles");
+
+    const sparkleBox =
+      document.getElementById("sparkles");
+
     for (let i = 0; i < 55; i++) {
-      const s = document.createElement("span");
+
+      const s =
+        document.createElement("span");
+
       s.className = "sparkle";
-      s.style.left = Math.random() * 100 + "vw";
-      s.style.animationDuration = (5 + Math.random() * 8) + "s";
-      s.style.animationDelay = (-Math.random() * 12) + "s";
-      const size = (1.5 + Math.random() * 3) + "px";
+
+      s.style.left =
+        Math.random() * 100 + "vw";
+
+      s.style.animationDuration =
+        (5 + Math.random() * 8) + "s";
+
+      s.style.animationDelay =
+        (-Math.random() * 12) + "s";
+
+      const size =
+        (1.5 + Math.random() * 3) + "px";
+
       s.style.width = size;
       s.style.height = size;
-      s.style.opacity = 0.35 + Math.random() * 0.65;
+
+      s.style.opacity =
+        0.35 + Math.random() * 0.65;
+
       sparkleBox.appendChild(s);
     }
+
   </script>
 
 </body>
